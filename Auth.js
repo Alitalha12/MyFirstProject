@@ -28,7 +28,7 @@ login.addEventListener("click",(e)=>{
   }).then((result) => {
     if (result.isConfirmed) {
       // Redirect only after user clicks OK
-      window.location.href = "../ProjectSkeleton/UserDashboard.html";
+      window.location.href = "UserDashboard.html";
     }
   });
 }
