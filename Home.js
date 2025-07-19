@@ -35,13 +35,13 @@ Button.addEventListener("click", () => {
   if (option === "true") {
     let ans = localStorage.getItem("Password");
     if (ans && ans !== "") {
-      window.location.href = "../ProjectSkeleton/UserDashboard.html";
+      window.location.href = "UserDashboard.html";
     } else {
-      window.location.href = "../ProjectSkeleton/Auth.html";
+      window.location.href = "Auth.html";
     }
   } else {
     // If option is "false" or not set
-    window.location.href = "../ProjectSkeleton/Auth.html";
+    window.location.href = "Auth.html";
   }
 })
 });
