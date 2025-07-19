@@ -3,7 +3,7 @@ let lgout = document.getElementById("lg");
 
 let prof = document.getElementById("90");
 prof.addEventListener("click",()=>{
-    window.location.href="../ProjectSkeleton/Profile.html";
+    window.location.href="Profile.html";
 })
 // Get current state from localStorage
 let now = localStorage.getItem("Option");
@@ -43,7 +43,7 @@ lgout.addEventListener("click", () => {
     confirmButtonColor: '#3085d6'
   }).then((result) => {
     if (result.isConfirmed) {
-      window.location.href = "../ProjectSkeleton/Home.html";
+      window.location.href = "Home.html";
     }
   });
 });
