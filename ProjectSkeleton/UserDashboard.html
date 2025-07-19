@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../ProjectStyling/UserDashboard.css">
+   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body class=" body122">
+
+
+    <div class="Navbar">
+        <div class="major">
+        <button class=" btn btn3" id="en">Enable Auto Login</button>
+        <button class=" btn  btn3" id="lg">logout</button>
+        </div>
+        <div class="profile" >
+        <button class="btn  btn3" id="90">Profile</button>
+        </div>
+        <div class="g"></div>
+    </div>
+    <div class="Section">
+        <button class=" btn btn2  btn3" id="80">Make Your Task</button>
+         <button class=" btn btn2  btn3" id="81">Evaluate Yourself</button>
+         <button class=" btn btn2 btn3" id="82">View Your Perfromance</button>
+          <button class=" btn btn2 btn3" id="83">View Pending Work</button>
+           
+    </div>
+    <script>
+            let bac=document.getElementById("80");
+             let bac1=document.getElementById("81");
+              let bac2=document.getElementById("82");
+               let bac3=document.getElementById("83");
+                let bac4=document.getElementById("84");
+
+            bac.addEventListener("click",()=>{
+                window.location.href="Add.html";
+            })
+            bac1.addEventListener("click",()=>{
+                window.location.href="Evaluate.html";
+            })
+            bac2.addEventListener("click",()=>{
+                window.location.href="Perfromance.html";
+            })
+            bac3.addEventListener("click",()=>{
+                window.location.href="Pending.html";
+            })
+             bac4.addEventListener("click",()=>{
+                window.location.href="UserDashboard.html";
+            })
+
+        </script>
+    <script src="../ProjectLogic/UserDashboard.js"></script>
+</body>
+</html>

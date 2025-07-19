@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="../ProjectStyling/UserDashboard.css">
+      <link rel="stylesheet" href="../ProjectStyling/Add.css">
+   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+
+</head>
+<body>
+    <div class="Navbar">
+       
+        <button class=" btn  btn3" id="lg">Back</button>
+       </div>
+    
+<div class="adq">
+   
+    <p id="69" class="r">Pending Tasks!!!!! </p>
+    
+</div>
+<div id="55" class="card-container">
+
+</div>
+
+        <script>
+            let bac=document.getElementById("lg");
+            bac.addEventListener("click",()=>{
+                window.location.href="UserDashboard.html";
+            })
+let va = document.getElementById("68");
+let bu = document.getElementById("90");
+let dc = document.getElementById("55");
+
+// Load and display existing array on page load
+window.addEventListener("DOMContentLoaded", () => {
+  const stored = JSON.parse(localStorage.getItem("Array")) || [];
+  stored.forEach((element) => {
+    createCard(element);
+  });
+});
+
+bu.addEventListener("click", () => {
+  const dat = va.value.trim();
+  if (!dat) return;
+
+  // Get existing array from localStorage or create new one
+  const stored = JSON.parse(localStorage.getItem("Array")) || [];
+
+  // Add new data
+  stored.push(dat);
+
+  // Save back to localStorage
+  localStorage.setItem("Array", JSON.stringify(stored));
+
+  // Create and append the new card
+  createCard(dat);
+
+  // Optional: Clear input
+  va.value = "";
+});
+
+// Function to create and append a card
+function createCard(content) {
+  const el = document.createElement("div");
+  el.classList.add("card");
+
+  el.innerHTML = `
+    <p class="task-text">${content}</p>
+    
+  `;
+
+  // Append to container
+  dc.appendChild(el);}
+
+
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../ProjectStyling/UserDashboard.css">
+   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<canvas id="taskChart" width="400" height="200"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+      <div class="Navbar">
+       
+        <button class=" btn  btn3" id="lg">Back</button>
+       </div>
+    <canvas id="taskChart" width="300" height="200"></canvas>
+
+<script>
+  // Simulate some localStorage data
+  if (!localStorage.getItem("DeletedTasks")) {
+    localStorage.setItem("DeletedTasks", "3");
+  }
+  if (!localStorage.getItem("Array")) {
+    localStorage.setItem("Array", JSON.stringify(["Task 1", "Task 2"]));
+  }
+
+  function renderChart() {
+    const done = parseInt(localStorage.getItem("DeletedTasks") || "0");
+    const pendingArray = JSON.parse(localStorage.getItem("Array") || "[]");
+    const pending = pendingArray.length;
+
+    const canvas = document.getElementById("taskChart");
+    if (!canvas) {
+      console.error("Canvas not found");
+      return;
+    }
+
+    const ctx = canvas.getContext("2d");
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Tasks Done', 'Tasks Pending'],
+        datasets: [{
+          label: 'Task Status',
+          data: [done, pending],
+          backgroundColor: ['#4caf50', '#f44336'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              stepSize: 1
+            }
+          }
+        }
+      }
+    });
+  }
+
+  window.addEventListener("DOMContentLoaded", renderChart);
+
+
+        </script>
+</body>
+</html>

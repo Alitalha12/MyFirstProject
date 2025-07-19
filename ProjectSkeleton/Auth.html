@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do and Evaluate - Authentication</title>
+    <link rel="stylesheet" href="../ProjectStyling/Auth.css">
+    <!-- SweetAlert2 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+
+
+    <h1 class="Head">User Authentication </h1>
+    <!-- From Uiverse.io by Praashoo7 --> 
+<!-- From Uiverse.io by Rohankumar620 --> 
+<div class="container">
+    <input id="signup_toggle" type="checkbox">
+    <form class="form">
+        
+        <div class="form_front">
+            <div class="form_details">Login</div>
+            <input type="text" class="input" placeholder="Username" id="15">
+            <input type="text" class="input" placeholder="Password" id="16">
+            <button class="btn" id="17">Login</button>
+            <span class="switch">Don't have an account? 
+                <label for="signup_toggle" class="signup_tog">
+                    Sign Up
+                </label>
+            </span>
+        </div>
+        <div class="form_back " id="32">
+            <div class="form_details">SignUp</div>
+            <input type="text" class="input" placeholder="Firstname" id="10">
+            <input type="text" class="input" placeholder="Username" id="11">
+            <input type="text" class="input" placeholder="Password" id="12">
+            <input type="text" class="input" placeholder="Confirm Password" id="14">
+            <button class="btn" id="13">Signup</button>
+            <span class="switch">Already have an account? 
+                <label for="signup_toggle" class="signup_tog">
+                    Sign In
+                </label>
+            </span>
+        </div>
+    </form>
+</div>
+<script src="../ProjectLogic/Auth.js"></script>
+ 
+</body>
+</html>

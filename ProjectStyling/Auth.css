@@ -1,0 +1,271 @@
+/* From Uiverse.io by Rohankumar620 */ 
+
+body{
+    background: linear-gradient(145deg, #111111, #1c1c1c, #0a0a0a);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 340px;
+  perspective: 3000px;
+}
+.about-border {
+  position: relative;
+  width: 41.1875em;
+  height: 40.1875em;
+  border-radius: 2.1875em;
+  padding: 0.25em;
+  background: linear-gradient(-45deg, #8ec5fc, #e0c3fc, #9b51cf, #80d0c7);
+  background-size: 300% 300%;
+  animation: borderMove 5s linear infinite;
+  left: 0.5em;
+  box-shadow: 0 0 1.5625em rgba(204, 153, 255, 0.5);
+}
+
+@keyframes borderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.form::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+  z-index: -1;
+  box-shadow: 0 0 30px rgba(160, 100, 255, 0.3), 0 0 60px rgba(160, 100, 255, 0.2);
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(160, 100, 255, 0.3), 0 0 60px rgba(160, 100, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(160, 100, 255, 0.5), 0 0 80px rgba(160, 100, 255, 0.3);
+  }
+}
+
+.form {
+    position: relative;
+    top: -50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+}
+
+.form .form_front {
+    backdrop-filter: blur(90px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  backface-visibility: hidden;
+  padding: 65px 45px;
+  border-radius: 15px;
+ box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.8),
+    0 0 30px rgba(255, 255, 255, 0.05),
+    inset 2px 2px 10px rgba(0, 0, 0, 0.9),
+    inset -1px -1px 5px rgba(255, 255, 255, 0.2);
+  
+}
+
+.Head{
+    color: white;
+    position: relative
+    ;
+    left: 490px;
+    width: 500px;
+}
+.form .form_back {
+     backdrop-filter: blur(90px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  backface-visibility: hidden;
+  transform: rotateY(-180deg);
+  padding: 65px 45px;
+  border-radius: 15px;
+ box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.8),
+    0 0 30px rgba(255, 255, 255, 0.05),
+    inset 2px 2px 10px rgba(0, 0, 0, 0.9),
+    inset -1px -1px 5px rgba(255, 255, 255, 0.2);
+}
+
+.form_details {
+     backdrop-filter: blur(90px);
+  font-size: 25px;
+  font-weight: 600;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.input {
+  width: 245px;
+  min-height: 45px;
+  color: #fff;
+  outline: none;
+  transition: 0.35s;
+  padding: 0px 7px;
+  background-color: #212121;
+  border-radius: 6px;
+  border: 2px solid #212121;
+  box-shadow: 6px 6px 10px rgba(0,0,0,1),
+  1px 1px 10px rgba(255, 255, 255, 0.6);
+}
+
+.input::placeholder {
+  color: #999;
+}
+
+.input:focus.input::placeholder {
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.input:focus {
+  transform: scale(1.05);
+  box-shadow: 6px 6px 10px rgba(0,0,0,1),
+  1px 1px 10px rgba(255, 255, 255, 0.6),
+  inset 2px 2px 10px rgba(0,0,0,1),
+  inset -1px -1px 5px rgba(255, 255, 255, 0.6);
+}
+
+.btn {
+  padding: 10px 35px;
+  cursor: pointer;
+  background-color: #212121;
+  border-radius: 6px;
+  border: 2px solid #212121;
+  box-shadow: 6px 6px 10px rgba(0,0,0,1),
+  1px 1px 10px rgba(255, 255, 255, 0.6);
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.35s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 6px 6px 10px rgba(0,0,0,1),
+  1px 1px 10px rgba(255, 255, 255, 0.6),
+  inset 2px 2px 10px rgba(0,0,0,1),
+  inset -1px -1px 5px rgba(255, 255, 255, 0.6);
+}
+
+.btn:focus {
+  transform: scale(1.05);
+  box-shadow: 6px 6px 10px rgba(0,0,0,1),
+  1px 1px 10px rgba(255, 255, 255, 0.6),
+  inset 2px 2px 10px rgba(0,0,0,1),
+  inset -1px -1px 5px rgba(255, 255, 255, 0.6);
+}
+
+.form .switch {
+  font-size: 13px;
+  color: white;
+}
+
+.form .switch  {
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.container #signup_toggle {
+  display: none;
+}
+
+.container #signup_toggle:checked + .form {
+  transform: rotateY(-180deg);
+}
+
+
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.form {
+  animation: zoomPulse 6s ease-in-out infinite;
+}
+
+.form_front .input,
+.form_back .input,
+.form_front .form_details,
+.form_back .form_details,
+.form_front .btn,
+.form_back .btn {
+  animation: fadeSlideIn 0.6s ease forwards;
+  opacity: 0;
+}
+
+.form_front .input:nth-child(2),
+.form_back .input:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.form_front .input:nth-child(3),
+.form_back .input:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.form_front .btn,
+.form_back .btn {
+  animation-delay: 0.3s;
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+  transform: rotate(25deg);
+  pointer-events: none;
+}
+
+.btn:hover::after {
+  animation: shine 0.75s linear;
+}

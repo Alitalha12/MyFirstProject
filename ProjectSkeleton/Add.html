@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="../ProjectStyling/UserDashboard.css">
+      <link rel="stylesheet" href="../ProjectStyling/Add.css">
+   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+
+</head>
+<body>
+    <div class="Navbar">
+       
+        <button class=" btn  btn3" id="lg">Back</button>
+       </div>
+    
+<div class="adq">
+    <label for="68"> WRITE DOWN YOUR TASK</label>
+    <input  id="68" type="text" placeholder="write here your task ......."><button class="btn  btn3" id="90">ADD TASK</button>
+</div>
+<div id="55" class="card-container">
+
+</div>
+
+        <script>
+            let bac=document.getElementById("lg");
+            bac.addEventListener("click",()=>{
+                window.location.href="UserDashboard.html";
+            })
+let va = document.getElementById("68");
+let bu = document.getElementById("90");
+let dc = document.getElementById("55");
+
+// Load and display existing array on page load
+window.addEventListener("DOMContentLoaded", () => {
+  const stored = JSON.parse(localStorage.getItem("Array")) || [];
+  stored.forEach((element) => {
+    createCard(element);
+  });
+});
+
+bu.addEventListener("click", () => {
+  const dat = va.value.trim();
+  if (!dat) return;
+
+  // Get existing array from localStorage or create new one
+  const stored = JSON.parse(localStorage.getItem("Array")) || [];
+
+  // Add new data
+  stored.push(dat);
+
+  // Save back to localStorage
+  localStorage.setItem("Array", JSON.stringify(stored));
+
+  // Create and append the new card
+  createCard(dat);
+
+  // Optional: Clear input
+  va.value = "";
+});
+
+// Function to create and append a card
+function createCard(content) {
+  const el = document.createElement("div");
+  el.classList.add("card");
+
+  el.innerHTML = `
+    <p class="task-text">${content}</p>
+    <button class="btn btn3 edit-btn">Edit</button>
+  `;
+
+  // Append to container
+  dc.appendChild(el);
+
+  // Add event listener for this card's button
+  const editBtn = el.querySelector(".edit-btn");
+  editBtn.addEventListener("click", () => {
+    let tasks = JSON.parse(localStorage.getItem("Array") || "[]");
+    let oldTaskValue = el.querySelector(".task-text").innerText;
+
+    Swal.fire({
+      title: 'Update Task',
+      input: 'text',
+      inputLabel: 'Enter new task text',
+      inputValue: oldTaskValue,
+      showCancelButton: true,
+      confirmButtonText: 'Save',
+      cancelButtonText: 'Cancel',
+      inputValidator: (value) => {
+        if (!value) return 'Task cannot be empty!';
+      }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const newTask = result.value;
+        const index = tasks.indexOf(oldTaskValue);
+
+        if (index !== -1) {
+          tasks[index] = newTask;
+          localStorage.setItem("Array", JSON.stringify(tasks));
+          el.querySelector(".task-text").innerText = newTask;
+
+          Swal.fire('Updated!', 'Your task has been updated.', 'success');
+        } else {
+          Swal.fire('Error!', 'Original task not found.', 'error');
+        }
+      }
+    });
+  });
+}
+
+
+        </script>
+</body>
+</html>
